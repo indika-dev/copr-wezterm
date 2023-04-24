@@ -9,7 +9,7 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
-Source0: https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}.fedora${releasever}.rpm
+Source0: https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}.fedora%{release}.rpm
 BuildRequires: desktop-file-utils
 Requires: openssl
 %description
