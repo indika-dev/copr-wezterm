@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define vtag 20230408-112425-69ae8472
+%define vtag nightly
 
 Name:    wezterm
 Version: %(echo "$(tr '-' '.' <<< %{vtag})")
@@ -9,7 +9,7 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
-Source0: https://github.com/wez/%{name}/archive/refs/tags/%{vtag}.tar.gz
+Source0: https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}-src.tar.gz
 BuildRequires: desktop-file-utils
 BuildRequires: rust
 BuildRequires: cargo
@@ -34,8 +34,8 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 # curl -LJO %{URL}/blob/v%{vtag}/LICENSE.md
 # curl -LJO %{URL}/blob/v%{vtag}/README.md
 ls
-mv %{name}-%{vtag}/* .
-rm -rf %{name}-%{vtag}
+mv */* .
+# rm -rf %{name}-%{vtag}
 ls
 cargo build --all --release
 %install
