@@ -13,6 +13,7 @@ Source0: https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag
 BuildRequires: desktop-file-utils
 BuildRequires: rust
 BuildRequires: cargo
+BuildRequires: gcc-c++
 BuildRequires: openssl-devel 
 BuildRequires: libwayland-client
 BuildRequires: libwayland-cursor
