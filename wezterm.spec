@@ -24,6 +24,10 @@ BuildRequires: xorg-x11-server-Xwayland-devel
 BuildRequires: libX11-devel
 BuildRequires: libxkbcommon-devel
 BuildRequires: libxkbcommon-x11-devel
+BuildRequires: xcb-util-devel
+BuildRequires: xcb-util-keysyms-devel
+BuildRequires: xcb-util-wm-devel
+BuildRequires: libpng-devel
 Requires: dbus, fontconfig, openssl, libxcb, libxkbcommon, libxkbcommon-x11, libwayland-client, libwayland-egl, libwayland-cursor, mesa-libEGL, xcb-util-keysyms, xcb-util-wm
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
