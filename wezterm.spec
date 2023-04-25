@@ -11,11 +11,13 @@ License: MIT
 URL:     https://github.com/wez/%{name}
 Source0: https://github.com/wez/%{name}/archive/refs/tags/%{vtag}.tar.gz
 BuildRequires: desktop-file-utils
+BuildRequires: rust
+BuildRequires: cargo
 Requires: dbus, fontconfig, openssl, libxcb, libxkbcommon, libxkbcommon-x11, libwayland-client, libwayland-egl, libwayland-cursor, mesa-libEGL, xcb-util-keysyms, xcb-util-wm
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 %prep
-%setup -q -c
+setup -q -c
 %build
 # pull fresh License and README Files
 curl -LJO %{URL}/blob/v%{vtag}/LICENSE.md
