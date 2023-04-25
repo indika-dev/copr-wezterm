@@ -18,6 +18,21 @@ BuildRequires: libwayland-client
 BuildRequires: libwayland-cursor
 BuildRequires: libwayland-egl
 BuildRequires: libwayland-server
+BuildRequires: rust-wayland-cursor+default-devel
+BuildRequires: rust-wayland-cursor-devel
+BuildRequires: rust-wayland-egl+default-devel
+BuildRequires: rust-wayland-egl-devel
+BuildRequires: rust-wayland-sys+client-devel
+BuildRequires: rust-wayland-sys+cursor-devel
+BuildRequires: rust-wayland-sys+default-devel
+BuildRequires: rust-wayland-sys+dlib-devel
+BuildRequires: rust-wayland-sys+dlopen-devel
+BuildRequires: rust-wayland-sys+egl-devel
+BuildRequires: rust-wayland-sys+lazy_static-devel
+BuildRequires: rust-wayland-sys+libc-devel
+BuildRequires: rust-wayland-sys+memoffset-devel
+BuildRequires: rust-wayland-sys+server-devel
+BuildRequires: rust-wayland-sys-devel
 Requires: dbus, fontconfig, openssl, libxcb, libxkbcommon, libxkbcommon-x11, libwayland-client, libwayland-egl, libwayland-cursor, mesa-libEGL, xcb-util-keysyms, xcb-util-wm
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
