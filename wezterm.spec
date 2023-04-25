@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define vtag nightly
+%define vtag 20230408-112425-69ae8472
 
 Name:    wezterm
 Version: %(echo "$(tr '-' '.' <<< %{vtag})")
@@ -9,7 +9,7 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
-Source0: https://github.com/wez/wezterm.git
+Source0: https://github.com/wez/%{name}/archive/refs/tags/%{vtag}.tar.gz
 BuildRequires: desktop-file-utils
 Requires: dbus, fontconfig, openssl, libxcb, libxkbcommon, libxkbcommon-x11, libwayland-client, libwayland-egl, libwayland-cursor, mesa-libEGL, xcb-util-keysyms, xcb-util-wm
 %description
