@@ -15,6 +15,9 @@ BuildRequires: rust
 BuildRequires: cargo
 BuildRequires: openssl-devel 
 BuildRequires: libwayland-client
+BuildRequires: libwayland-cursor
+BuildRequires: libwayland-egl
+BuildRequires: libwayland-server
 Requires: dbus, fontconfig, openssl, libxcb, libxkbcommon, libxkbcommon-x11, libwayland-client, libwayland-egl, libwayland-cursor, mesa-libEGL, xcb-util-keysyms, xcb-util-wm
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
