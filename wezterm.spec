@@ -15,10 +15,6 @@ BuildRequires: rust
 BuildRequires: cargo
 BuildRequires: gcc-c++
 BuildRequires: openssl-devel 
-BuildRequires: libwayland-client
-BuildRequires: libwayland-cursor
-BuildRequires: libwayland-egl
-BuildRequires: libwayland-server
 BuildRequires: wayland-devel
 BuildRequires: egl-wayland-devel
 BuildRequires: xorg-x11-server-Xwayland-devel
@@ -39,13 +35,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %prep
 %setup -q -c
 %build
-# pull fresh License and README Files
-# curl -LJO %{URL}/blob/v%{vtag}/LICENSE.md
-# curl -LJO %{URL}/blob/v%{vtag}/README.md
-ls
 mv */* .
-# rm -rf %{name}-%{vtag}
-ls
 cargo build --all --release
 %install
 # Prepare asset files
