@@ -54,7 +54,6 @@ mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
-cd %{name}
 mkdir -p %{buildroot}/usr/bin %{buildroot}/etc/profile.d
 install -Dm755 assets/open-wezterm-here -t %{buildroot}/usr/bin
 install -Dsm755 target/release/wezterm -t %{buildroot}/usr/bin
