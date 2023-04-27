@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define vtag %(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | jq -r '.tag_name')
+%define vtag %(echo "$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | jq -r '.tag_name')")
 
 Name:    wezterm
 Version: %(echo "$(tr '-' '.' <<< %{vtag})")
