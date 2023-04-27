@@ -3,13 +3,13 @@
 %define vtag nightly
 
 Name:    wezterm
-Version: %(echo "$(tr '-' '.' <<< %{vtag})")
+Version: %(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | jq -r '.tag_name')
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
-Source0: https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}-src.tar.gz
+Source0: https://github.com/wez/%{name}/releases/download/${version}/wezterm-${version}-src.tar.gz
 BuildRequires: desktop-file-utils
 BuildRequires: rust
 BuildRequires: cargo
