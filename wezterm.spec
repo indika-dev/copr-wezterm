@@ -1,15 +1,15 @@
 %global debug_package %{nil}
 
-%define vtag nightly
+%define vtag %(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | jq -r '.tag_name')
 
 Name:    wezterm
-Version: %(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | jq -r '.tag_name')
+Version: %(echo "$(tr '-' '.' <<< %{vtag})")
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
-Source0: https://github.com/wez/%{name}/releases/download/${version}/wezterm-${version}-src.tar.gz
+Source0: https://github.com/wez/%{name}/releases/download/${vtag}/wezterm-${vtag}-src.tar.gz
 BuildRequires: desktop-file-utils
 BuildRequires: rust
 BuildRequires: cargo
