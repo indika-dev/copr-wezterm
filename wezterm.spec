@@ -37,6 +37,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %build
 mv */* .
 export TAGNAME=%{vtag}
+echo %{vtag} > .tag
 # git tag %{vtag}
 echo building WezTerm $TAGNAME
 echo building WezTerm %{vtag}
