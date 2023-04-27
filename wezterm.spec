@@ -43,7 +43,7 @@ mv wezterm-$TAG_NAME/.tag .
 cp .tag ../
 rm -rf wezterm-$TAG_NAME
 ls -al
-cargo build --release -p wezterm-gui --features distro-defaults
+cargo build --all --release --features distro-defaults
 # cargo build --all --release
 %install
 # Prepare asset files
