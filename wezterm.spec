@@ -38,6 +38,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 mv wezterm-%{vtag}/* .
 mv wezterm-%{vtag}/.tag .
 rm -rf wezterm-%{vtag}
+ls -al
 # export TAGNAME=%{vtag}
 # echo $TAGNAME | tee .tag
 # cat .tag
