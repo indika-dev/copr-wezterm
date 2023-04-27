@@ -3,7 +3,7 @@
 %define vtag %(echo "$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d \\" -f 4)")
 
 Name:    wezterm
-Version: %(echo "$(tr '-' '.' <<< %{vtag})")
+Version: %(echo "$(tr '-' '_' <<< %{vtag})")
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
@@ -35,15 +35,16 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %prep
 %setup -q -c
 %build
+export TAG_NAME=%{vtag}
 export TAGNAME=%{vtag}
-mv wezterm-$TAGNAME/* .
-mv wezterm-$TAGNAME/.tag .
+export WEZTERM_CI_TAG=%{vtag}
+mv wezterm-$TAG_NAME/* .
+mv wezterm-$TAG_NAME/.tag .
 cp .tag ../
-cp .tag wezterm-version/
-cp .tag assets/
-rm -rf wezterm-$TAGNAME
+rm -rf wezterm-$TAG_NAME
 ls -al
-cargo build --all --release
+cargo build --release -p wezterm-gui --features distro-defaults
+# cargo build --all --release
 %install
 # Prepare asset files
 set -x
