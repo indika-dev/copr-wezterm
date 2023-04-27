@@ -38,12 +38,11 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 export TAGNAME=%{vtag}
 mv wezterm-$TAGNAME/* .
 mv wezterm-$TAGNAME/.tag .
+cp .tag ../
+cp .tag wezterm-version/
+cp .tag assets/
 rm -rf wezterm-$TAGNAME
 ls -al
-# 
-# echo $TAGNAME | tee .tag
-# cat .tag
-# echo building WezTerm $TAGNAME
 cargo build --all --release
 %install
 # Prepare asset files
@@ -84,6 +83,6 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /usr/share/nautilus-python/extensions/wezterm-nautilus.py*
 /etc/profile.d/*
 
-%changelog nightly 
-* Mon Apr 24 2023 Stefan Maaßen <stefan.maassen@posteo.de> - nightly
-- initial setup with nightly for fedora 38
+%changelog %{vtag} 
+* Mon Apr 24 2023 Stefan Maaßen <stefan.maassen@posteo.de> - %{vtag}
+- built current release
