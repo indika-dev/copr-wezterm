@@ -44,7 +44,6 @@ cp .tag ../
 rm -rf wezterm-$TAG_NAME
 ls -al
 cargo build --all --release --features distro-defaults
-# cargo build --all --release
 %install
 # Prepare asset files
 set -x
@@ -85,5 +84,5 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /etc/profile.d/*
 
 %changelog %{vtag} 
-* Mon Apr 24 2023 Stefan Maaßen <stefan.maassen@posteo.de> - %{vtag}
+* Mon Apr 27 2023 Stefan Maaßen <stefan.maassen@posteo.de> - %{vtag}
 - built current release
