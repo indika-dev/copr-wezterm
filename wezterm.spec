@@ -33,7 +33,7 @@ Requires: dbus, fontconfig, openssl, libxcb, libxkbcommon, libxkbcommon-x11, lib
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 %prep
-%setup -q -c
+# %setup -q -c
 %build
 export TAG_NAME=%{vtag}
 export TAGNAME=%{vtag}
