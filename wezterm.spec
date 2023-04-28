@@ -38,6 +38,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 export TAG_NAME=%{vtag}
 export TAGNAME=%{vtag}
 export WEZTERM_CI_TAG=%{vtag}
+ls -al
 tar xzf wezterm-%{vtag}-src.tar.gz
 mv wezterm-$TAG_NAME/* .
 mv wezterm-$TAG_NAME/.tag .
