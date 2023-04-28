@@ -1,9 +1,9 @@
 %global debug_package %{nil}
 
-%define vtag %(echo "$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d \\" -f 4)")
+%define vtag 20230408-112425-69ae8472
 
 Name:    wezterm
-Version: %(echo "$(tr '-' '_' <<< %{vtag})")
+Version: 20230408_112425_69ae8472
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
@@ -83,6 +83,4 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /usr/share/nautilus-python/extensions/wezterm-nautilus.py*
 /etc/profile.d/*
 
-%changelog %{vtag} 
-* Mon Apr 27 2023 Stefan Maaßen <stefan.maassen@posteo.de> - %{vtag}
-- built current release
+%changelog
