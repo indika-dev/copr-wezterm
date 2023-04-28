@@ -4,7 +4,7 @@
 
 Name:    wezterm
 Version: 0
-Release: 0%\{?vtag}
+Release: 0%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
