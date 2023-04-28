@@ -3,8 +3,8 @@
 %define vtag 20230408-112425-69ae8472
 
 Name:    wezterm
-Version: 
-Release: 3%{vtag}
+Version: 0
+Release: 0%\{?vtag}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
