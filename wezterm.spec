@@ -4,7 +4,7 @@
 
 Name:    wezterm
 Version: 0
-Release: 0%{?dist}
+Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
@@ -84,10 +84,6 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /etc/profile.d/*
 
 %changelog
-* Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> - 20230408_112425_69ae8472-3
+* Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> - 0-1
 - rebuilt
 
-* Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> - 20230408_112425_69ae8472-2
-- rebuilt
-
-* 
