@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define vtag 20230408-112425-69ae8472
+%define vtag %(echo "$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d \\" -f 4)")
 
 Name:    wezterm
 Version: 0
