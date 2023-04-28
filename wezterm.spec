@@ -39,6 +39,7 @@ export TAG_NAME=%{vtag}
 export TAGNAME=%{vtag}
 export WEZTERM_CI_TAG=%{vtag}
 ls -al
+mv */*.tar.gz .
 tar xzf wezterm-%{vtag}-src.tar.gz
 mv wezterm-$TAG_NAME/* .
 mv wezterm-$TAG_NAME/.tag .
