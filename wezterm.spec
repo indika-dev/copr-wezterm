@@ -84,6 +84,9 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /etc/profile.d/*
 
 %changelog
+* Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> 0-1
+- new package built with tito
+
 * Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> - 0-1
 - rebuilt
 
