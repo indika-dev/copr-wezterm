@@ -3,8 +3,8 @@
 %define vtag 20230408-112425-69ae8472
 
 Name:    wezterm
-Version: 20230408_112425_69ae8472
-Release: 2%{?dist}
+Version: 
+Release: 3%{vtag}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
@@ -84,6 +84,9 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /etc/profile.d/*
 
 %changelog
+* Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> - 20230408_112425_69ae8472-3
+- rebuilt
+
 * Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> - 20230408_112425_69ae8472-2
 - rebuilt
 
