@@ -38,7 +38,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 export TAG_NAME=%{vtag}
 export TAGNAME=%{vtag}
 export WEZTERM_CI_TAG=%{vtag}
-curl https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}-src.tar.gz --output wezterm-src.tar.gz --silent && \
+wget https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}-src.tar.gz --output-file wezterm-src.tar.gz
 tar xzf wezterm-src.tar.gz --strip-components=1
 cp .tag ../
 rm -rf wezterm-$TAG_NAME
