@@ -3,7 +3,7 @@
 %define vtag %(echo "$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d \\" -f 4)")
 
 Name:    wezterm
-Version: 0
+Version: 0.r%(echo "$(tr '-' '_' <<< %{vtag})")
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
