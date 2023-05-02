@@ -1,9 +1,10 @@
 %global debug_package %{nil}
 
 %define vtag %(echo "$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d \\" -f 4)")
+%define rtag %(echo "$(tr '-' '_' <<< %{vtag})")
 
 Name:    wezterm
-Version: 0.r%(echo "$(tr '-' '_' <<< %{vtag})")
+Version: 0.r20230408_112425_69ae8472
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
@@ -84,6 +85,14 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /etc/profile.d/*
 
 %changelog
+* Tue May 02 2023 Stefan Maaßen <stefan.maassen@posteo.de> 0.r20230408_112425_69ae8472-1
+- updated versioning (stefan.maassen@posteo.de)
+- prepared for tito (s.maassen@verband.creditreform.de)
+
+* Tue May 02 2023 Stefan Maaßen <stefan.maassen@posteo.de>
+- updated versioning (stefan.maassen@posteo.de)
+- prepared for tito (s.maassen@verband.creditreform.de)
+
 * Fri Apr 28 2023 Stefan Maaßen <s.maassen@verband.creditreform.de> 0-1
 - new package built with tito
 
