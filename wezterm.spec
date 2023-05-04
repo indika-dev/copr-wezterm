@@ -1,8 +1,5 @@
 %global debug_package %{nil}
 
-%define vtag %(echo "$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d \\" -f 4)")
-%define rtag %(echo "$(tr '-' '_' <<< %{vtag})")
-
 Name:    wezterm
 Version: 0.r20230408_112425_69ae8472
 Release: 1%{?dist}
@@ -10,7 +7,7 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
-Source0: https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}-src.tar.gz
+Source0: https://github.com/wez/%{name}/releases/download/20230408-112425-69ae8472/%{name}-20230408-112425-69ae8472-src.tar.gz
 BuildRequires: desktop-file-utils
 BuildRequires: rust
 BuildRequires: cargo
@@ -36,13 +33,13 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %prep
 # %setup -q -c
 %build
-export TAG_NAME=%{vtag}
-export TAGNAME=%{vtag}
-export WEZTERM_CI_TAG=%{vtag}
-curl -LO https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}-src.tar.gz
-tar xzf %{name}-%{vtag}-src.tar.gz --strip-components=1
+export TAG_NAME="20230408-112425-69ae8472"
+export TAGNAME="20230408-112425-69ae8472"
+export WEZTERM_CI_TAG="20230408-112425-69ae8472"
+curl -LO https://github.com/wez/%{name}/releases/download/20230408-112425-69ae8472/%{name}-20230408-112425-69ae8472-src.tar.gz
+tar xzf %{name}-20230408-112425-69ae8472-src.tar.gz --strip-components=1
 cp .tag ../
-rm -rf wezterm-$TAG_NAME
+rm -rf wezterm-20230408-112425-69ae8472
 ls -al
 cargo build --all --release --features distro-defaults
 %install
