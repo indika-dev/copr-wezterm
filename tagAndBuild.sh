@@ -110,7 +110,7 @@ else
 
 	EOF
 
-	# tito tag --use-version 0.r"${WEZTERM_VERSION}"
-	# git push --follow-tags origin
+	tito tag --use-version 0.r"${WEZTERM_VERSION}"
+	git push --follow-tags origin
 	echo "${WEZTERM_RELEASE_VERSION}" >./currentversion
 fi
