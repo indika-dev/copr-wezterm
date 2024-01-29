@@ -1,13 +1,13 @@
 %global debug_package %{nil}
 
 Name:    wezterm
-Version: 0.r20240127_113634_bbcac864
+Version: 0.r20240128_202157_1e552d76
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
-Source0: https://github.com/wez/%{name}/releases/download/20240127-113634-bbcac864/%{name}-20240127-113634-bbcac864-src.tar.gz
+Source0: https://github.com/wez/%{name}/releases/download/20240128-202157-1e552d76/%{name}-20240128-202157-1e552d76-src.tar.gz
 BuildRequires: desktop-file-utils
 BuildRequires: rust
 BuildRequires: cargo
@@ -33,13 +33,13 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %prep
 # %setup -q -c
 %build
-export TAG_NAME="20240127-113634-bbcac864"
-export TAGNAME="20240127-113634-bbcac864"
-export WEZTERM_CI_TAG="20240127-113634-bbcac864"
-curl -LO https://github.com/wez/%{name}/releases/download/20240127-113634-bbcac864/%{name}-20240127-113634-bbcac864-src.tar.gz
-tar xzf %{name}-20240127-113634-bbcac864-src.tar.gz --strip-components=1
+export TAG_NAME="20240128-202157-1e552d76"
+export TAGNAME="20240128-202157-1e552d76"
+export WEZTERM_CI_TAG="20240128-202157-1e552d76"
+curl -LO https://github.com/wez/%{name}/releases/download/20240128-202157-1e552d76/%{name}-20240128-202157-1e552d76-src.tar.gz
+tar xzf %{name}-20240128-202157-1e552d76-src.tar.gz --strip-components=1
 cp .tag ../
-rm -rf wezterm-20240127-113634-bbcac864
+rm -rf wezterm-20240128-202157-1e552d76
 ls -al
 cargo build --all --release --features distro-defaults
 %install
@@ -82,8 +82,8 @@ desktop-file-validate %{buildroot}/usr/share/applications/org.wezfurlong.wezterm
 /etc/profile.d/*
 
 %changelog
-* Sun Jan 28 2024 Stefan Maaßen <stefan.maassen@posteo.de> 0.r20240127_113634_bbcac864-1
-- update to build 20240127-113634-bbcac864 
+* Mon Jan 29 2024 Stefan Maaßen <stefan.maassen@posteo.de> 0.r20240128_202157_1e552d76-1
+- updated to build 20240128-202157-1e552d76
 
 * Tue May 02 2023 Stefan Maaßen <stefan.maassen@posteo.de> 0.r20230408_112425_69ae8472-1
 - updated versioning (stefan.maassen@posteo.de)
